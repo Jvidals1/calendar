@@ -65,12 +65,39 @@ public class DateTools {
     public static HashMap<Integer, String> getDayOfWeekNames() {
         HashMap<Integer, String> names = new HashMap<Integer, String>();
         // FIXME: Write this.
+
+        HashMap<Integer,String> getDaysOfWeekNames = new HashMap<Integer, String>();
+        //workdays
+        names.put(Calendar.SUNDAY,"Sunday");//Sunday
+        names.put(Calendar.MONDAY, "Monday"); //Monday
+        names.put(Calendar.TUESDAY, "Tuesday"); //Tuesaday
+        names.put(Calendar.WEDNESDAY,"Wednesday"); //Wednesday
+        names.put(Calendar.THURSDAY, "Thursday"); //Thursday
+        names.put(Calendar.FRIDAY, "Friday"); //Friday
+        names.put(Calendar.SATURDAY, "Saturday"); //Saturday
+
+
         return names;
     }
 
     public static HashMap<Integer, String> getMonthNames() {
+        HashMap<Integer, String> months = new HashMap<Integer, String>();
         // FIXME: Write this.
-        return null;  // Change this!
+
+        months.put(Calendar.JANUARY, "January");
+        months.put(Calendar.FEBRUARY, "Febrary");
+        months.put(Calendar.MARCH, "March");
+        months.put(Calendar.APRIL, "April");
+        months.put(Calendar.MAY, "May");
+        months.put(Calendar.JUNE, "January");
+        months.put(Calendar.JULY, "July");
+        months.put(Calendar.AUGUST, "August");
+        months.put(Calendar.SEPTEMBER, "Septemeber");
+        months.put(Calendar.OCTOBER, "October");
+        months.put(Calendar.NOVEMBER, "November");
+        months.put(Calendar.DECEMBER, "December");
+
+        return months;
     }
 
 }
