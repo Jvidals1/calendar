@@ -19,6 +19,12 @@ public class DateTools {
         return format.format(cal.getTime());
     }
 
+    public static String formatYear(Calendar cal) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy");
+        return format.format(cal.getTime());
+
+    }
+
     /**
      * Parses a date in "YYYY-MM-DD" format.
      * @param date
@@ -85,11 +91,11 @@ public class DateTools {
         // FIXME: Write this.
 
         months.put(Calendar.JANUARY, "January");
-        months.put(Calendar.FEBRUARY, "Febrary");
+        months.put(Calendar.FEBRUARY, "February");
         months.put(Calendar.MARCH, "March");
         months.put(Calendar.APRIL, "April");
         months.put(Calendar.MAY, "May");
-        months.put(Calendar.JUNE, "January");
+        months.put(Calendar.JUNE, "June");
         months.put(Calendar.JULY, "July");
         months.put(Calendar.AUGUST, "August");
         months.put(Calendar.SEPTEMBER, "Septemeber");
