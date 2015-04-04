@@ -98,12 +98,13 @@ public class DateTools {
         months.put(Calendar.JUNE, "June");
         months.put(Calendar.JULY, "July");
         months.put(Calendar.AUGUST, "August");
-        months.put(Calendar.SEPTEMBER, "Septemeber");
+        months.put(Calendar.SEPTEMBER, "September");
         months.put(Calendar.OCTOBER, "October");
         months.put(Calendar.NOVEMBER, "November");
         months.put(Calendar.DECEMBER, "December");
 
         return months;
     }
+
 
 }

@@ -30,9 +30,10 @@ public class CalendarPrinter {
         // Use these methods to help you:
         //   DateTools.getMonthNames()
 
+        //Create a Hashmap that prints monthNames
         HashMap<Integer, String> monthNames = DateTools.getMonthNames();
-        System.out.print(monthNames.get(date.MONTH - 1) + " " + DateTools.formatYear(date)); //Jan is defined at integer 0 and we are subtracting 1 to display the input date.
-
+       // System.out.print(monthNames.get(Calendar.MONTH -1) + " " + DateTools.formatYear(date)); //Jan is defined at integer 0 and we are subtracting 1 to display the input date.
+        System.out.print(DateTools.formatDate(printMonthCalendar(s);
 
         //   DateTools.getNextDay() to loop through days in the month.
 
@@ -45,10 +46,10 @@ public class CalendarPrinter {
                 Calendar.AUGUST == month || Calendar.OCTOBER == month || Calendar.DECEMBER == month)
             return 31;
         //For months w/ 30 days
-        if (Calendar.FEBRUARY == month || Calendar.APRIL == month || Calendar.JUNE == month || Calendar.SEPTEMBER == month || Calendar.NOVEMBER == month)
+        if ( Calendar.APRIL == month || Calendar.JUNE == month || Calendar.SEPTEMBER == month || Calendar.NOVEMBER == month)
             return 30;
-
-            if (Calendar.FEBRUARY == month)
+        //For February Leap Year ,
+        if (Calendar.FEBRUARY == month)
                 if (isLeapYear(year))
                     return 29;    //Leap year day
                 else              //Not Leap year
@@ -58,6 +59,7 @@ public class CalendarPrinter {
 
         }
 
+    //Reference Wikipedia Leap Year for explanation. Link: http://en.wikipedia.org/wiki/Leap_year
     public static boolean isLeapYear(int year) {
         if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
             return true;
@@ -68,7 +70,7 @@ public class CalendarPrinter {
 
     /** Print month body */
     static void printMonthBody(int startDay, int numOfDaysInMonth) {
-        // Pad space before the first day of the month
+        // Create a space before the first day of the month
         int i = 0;
         for (i = 0; i < startDay; i++)
             System.out.print("    ");
