@@ -23,8 +23,15 @@ public class Holidays {
 
         HashMap<Calendar, String> holidays = new HashMap<Calendar, String>();
         for (String line : lines) {
-            // FIXME: Write this.
-            // Use DateTools.parseDate.
+            String[] partsOfDate = line.split(",");
+            String date = partsOfDate[0];
+            String name = partsOfDate[1];
+            String type = partsOfDate[2];
+            Calendar dates = DateTools.parseDate(date);
+
+            if(type.equalsIgnoreCase(holidayType)){
+                holidays.put(dates, name);
+            }
         }
         return holidays;
     }

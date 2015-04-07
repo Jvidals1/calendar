@@ -3,7 +3,6 @@ package nyc.c4q.ac21.calendar;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -25,10 +24,11 @@ public class Main {
 
         // 2. Show whether this is a work day.
         HashMap<Integer, Boolean> workDays = WorkDays.getWorkDays();
-        // ...
 
         // 3. Show whether this is a national holiday, and if so, which.
         HashMap<Calendar, String> holidays = Holidays.getHolidays("National holiday");
+        System.out.println(holidays.get(date));
+
         // ...
 
         // 4. Show whether this date is in DST.

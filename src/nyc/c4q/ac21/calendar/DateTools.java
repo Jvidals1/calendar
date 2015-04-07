@@ -19,6 +19,11 @@ public class DateTools {
         return format.format(cal.getTime());
     }
 
+    public static String getYear(Calendar cal) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy");
+        return format.format(cal.getTime());
+    }
+
     /**
      * Parses a date in "YYYY-MM-DD" format.
      * @param date
@@ -70,7 +75,7 @@ public class DateTools {
         //workdays
         names.put(Calendar.SUNDAY,"Sunday");//Sunday
         names.put(Calendar.MONDAY, "Monday"); //Monday
-        names.put(Calendar.TUESDAY, "Tuesday"); //Tuesaday
+        names.put(Calendar.TUESDAY, "Tuesday"); //Tuesday
         names.put(Calendar.WEDNESDAY,"Wednesday"); //Wednesday
         names.put(Calendar.THURSDAY, "Thursday"); //Thursday
         names.put(Calendar.FRIDAY, "Friday"); //Friday

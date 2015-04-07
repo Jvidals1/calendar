@@ -18,7 +18,7 @@ public class WorkDays {
         //workdays
         calendar.put(Calendar.SUNDAY, false);//Sunday
         calendar.put(Calendar.MONDAY, true); //Monday
-        calendar.put(Calendar.TUESDAY, true); //Tuesaday
+        calendar.put(Calendar.TUESDAY, true); //Tuesday
         calendar.put(Calendar.WEDNESDAY, true); //Wednesday
         calendar.put(Calendar.THURSDAY, true); //Thursday
         calendar.put(Calendar.FRIDAY, true); //Friday
