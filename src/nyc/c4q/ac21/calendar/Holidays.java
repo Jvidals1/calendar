@@ -15,7 +15,7 @@ public class Holidays {
      *   A map from date to holiday name for holidays.
      */
     public static HashMap<Calendar, String> getHolidays(String holidayType) {
-        ArrayList<String> lines = FileTools.readLinesFromFile("holidays.csv");
+        ArrayList<String> lines = FileTools.readLinesFromFile("Holidays.csv");
         // Each line is of the form "date,name,type", where "date" is a date
         // in YYYY-MM-DD format, "name" is the holiday name, and "type" is
         // the holiday type.  Include only those lines where "type" matches
@@ -23,6 +23,10 @@ public class Holidays {
 
         HashMap<Calendar, String> holidays = new HashMap<Calendar, String>();
         for (String line : lines) {
+            if (line.endsWith(holidayType)) {
+                String[] holiday = line.split(",");
+                holidays.put(DateTools.parseDate(holiday[0]), holiday[1]);
+            }
             // FIXME: Write this.
             // Use DateTools.parseDate.
         }

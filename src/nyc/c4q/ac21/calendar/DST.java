@@ -17,14 +17,39 @@ public class DST {
      *   A hash map of the end date of DST in each year.
      */
     public static void getDSTDates(HashMap<Integer, Calendar> startDates, HashMap<Integer, Calendar> endDates) {
-        ArrayList<String> lines = FileTools.readLinesFromFile("dst.csv");
-        // FIXME: Write this code!
-        // Each line in the file is of the form "start,end", where both dates
-        // are in the same year.  This represents the dates DST starts and
-        // ends in this year.
-        //
-        // Use DateTools.parseDate.
+        ArrayList<String> lines = FileTools.readLinesFromFile("DST.csv");
+        Calendar cal;
+        String str;
+        Integer year;
+
+        for (String date : lines) {
+            String[] parsed = date.split(",");
+
+            for (int i=0; i<parsed.length; i++) {
+                str = parsed[i];
+                if (i % 2 == 0) {
+                    year = Integer.valueOf(str.substring(0, 4));
+                    cal = DateTools.parseDate(str);
+                    startDates.put(year, cal);
+                } else {
+                    year = Integer.valueOf(str.substring(0, 4));
+                    cal = DateTools.parseDate(str);
+                    endDates.put(year, cal);
+                }
+            }
+        }
     }
+
+
+    // FIXME: Write this code!
+    // Each line in the file is of the form "start,end", where both dates
+    // are in the same year.  This represents the dates DST starts and
+    // ends in this year.
+    //
+    // Use DateTools.parseDate.
+
+
+
 
     /**
      * Returns true if 'date' is during Daylight Savings Time.
@@ -39,9 +64,16 @@ public class DST {
         HashMap<Integer, Calendar> dstEndDates = new HashMap<Integer, Calendar>();
         // Populate them.
         DST.getDSTDates(dstStartDates, dstEndDates);
-
+        boolean isDst =false;
+        int year = date.get(Calendar.YEAR);
+        if(date.after(dstStartDates.get(year))&&date.before(dstEndDates.get(year))){
+            isDst=true;
+        }
         // FIXME: Write this code!
-        return false;  // Change this!
+        return isDst;  // Change this!
+    }
+    public static void main(String[] args){
+        System.out.println(isDST(DateTools.parseDate("2015-03-30")));
     }
 
 }
